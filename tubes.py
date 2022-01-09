@@ -14,7 +14,7 @@ from bokeh.models import DatetimeTickFormatter, ColumnDataSource
 output_notebook()
 
 #loading dataset
-data = pd.read_excel('./data/kasus aktif cov 19 jawa bali.xlsx')
+data = pd.read_excel('./data/kasus_aktif_cov_19_jawa_bali.xlsx')
 
 #change "tanggal" column tp datetime format from string
 data['Tanggal'] =  pd.to_datetime(data['Tanggal'], format='%y-%m-%d')
