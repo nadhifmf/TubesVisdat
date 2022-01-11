@@ -1,17 +1,11 @@
 #Usual imports for data processing
 import pandas as pd
-import numpy as np
 
 #Bokeh libraries and modules
 from bokeh.io import curdoc
-from bokeh.io import  output_notebook
 from bokeh.layouts import widgetbox, row
 from bokeh.plotting import figure
 from bokeh.models import DatetimeTickFormatter, ColumnDataSource
-
-
-#Setting visualizations' display to the in-notebook mode
-output_notebook()
 
 #loading dataset
 data = pd.read_excel('./data/kasus_aktif_cov_19_jawa_bali.xlsx')
