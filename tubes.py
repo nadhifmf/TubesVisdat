@@ -8,7 +8,7 @@ from bokeh.plotting import figure
 from bokeh.models import DatetimeTickFormatter, ColumnDataSource
 
 #loading dataset
-data = pd.read_csv('./data/kasus_aktif_cov_19_jawa_bali.csv')
+data = pd.read_excel('kasus aktif cov 19 jawa bali.xlsx')
 
 #change "tanggal" column tp datetime format from string
 data['Tanggal'] =  pd.to_datetime(data['Tanggal'], format='%y-%m-%d')
@@ -30,7 +30,6 @@ source = ColumnDataSource(data={
 
 p = figure(plot_width=1200, plot_height=600, tools=TOOLS)
 
-#Initializing our glyph. Only two parameters are necessary - x and y
 p.line('x',                                        #horizontal axis
        'y1',
        source=source,
@@ -85,6 +84,6 @@ p.ygrid.grid_line_color = 'blue'                 #vertical axis' color
 p.ygrid.grid_line_alpha = .3                     #vertical axis' opacity
 p.xaxis.formatter = DatetimeTickFormatter(hourmin = ['%y-%m-%d']) #making datetime format for x axis
 
-#Finally, we want to see our visual and we need to ask Bokeh to show it to us
+#showing visualization
 layout = row(widgetbox(p))
 curdoc().add_root(layout)
