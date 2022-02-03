@@ -8,10 +8,10 @@ from bokeh.plotting import figure
 from bokeh.models import DatetimeTickFormatter, ColumnDataSource
 
 #loading dataset
-data = pd.read_excel('kasus aktif cov 19 jawa bali.xlsx')
+data = pd.read_csv('kasus aktif cov 19 jawa bali.csv')
 
 #change "tanggal" column tp datetime format from string
-data['Tanggal'] =  pd.to_datetime(data['Tanggal'], format='%y-%m-%d')
+data['Tanggal'] =  pd.to_datetime(data['Tanggal'], format='%m/%d/%Y')
 
 #declare necessary tools
 TOOLS = "pan,wheel_zoom,box_zoom,reset,save,hover"
