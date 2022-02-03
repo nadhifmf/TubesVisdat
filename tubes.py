@@ -8,7 +8,7 @@ from bokeh.plotting import figure
 from bokeh.models import DatetimeTickFormatter, ColumnDataSource
 
 #loading dataset
-data = pd.read_excel('./data/kasus_aktif_cov_19_jawa_bali.xlsx')
+data = pd.read_csv('./data/kasus_aktif_cov_19_jawa_bali.csv')
 
 #change "tanggal" column tp datetime format from string
 data['Tanggal'] =  pd.to_datetime(data['Tanggal'], format='%y-%m-%d')
